@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Örneği</title>
+    <link rel="stylesheet" href="webTasarimOdev.css">
+    <style>
+        /* Genel CSS Kodu */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--container-bg-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            flex: 1;
+            text-align: right;
+        }
+
+        .profile-pic img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .header-info {
+            flex: 3;
+            text-align: left;
+            color: var(--text-color);
+        }
+
+        .header-info h1 {
+            font-size: 2.5em;
+            color: #0066cc; /* Mavi */
+        }
+
+        .header-info p {
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            color: var(--text-color);
+        }
+
+        main section {
+            margin-bottom: 20px;
+        }
+
+        main section h2 {
+            border-bottom: 2px solid #0066cc; /* Mavi */
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            color: #0066cc; /* Mavi */
+        }
+
+        .education, .experience, .skills, .certificates {
+            margin-left: 20px;
+        }
+
+        .experience h3, .education h3 {
+            font-size: 1.2em;
+            color: var(--text-color);
+        }
+
+        .experience p, .education p {
+            color: #777;
+            margin: 5px 0;
+        }
+
+        .experience ul, .skills, .certificates {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .experience ul li, .skills li, .certificates li {
+            background-color: var(--list-bg-color);
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            color: var(--text-color);
+        }
+
+        .skills li, .certificates li {
+            background-color: #e6f7ff; /* Hafif mavi */
+        }
+
+        /* Buton Stili */
+        .contact-info button {
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .contact-info button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Temalar */
+        :root {
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --container-bg-color: #ffffff;
+            --list-bg-color: #f9f9f9;
+        }
+
+        [data-theme="dark"] {
+            --background-color: #333;
+            --text-color: #f4f4f4;
+            --container-bg-color: #444;
+            --list-bg-color: #555;
+        }
+
+        [data-theme="light"] {
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --container-bg-color: #ffffff;
+            --list-bg-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div class="container">
+        <header>
+            <div class="header-info">
+                <h1>Batuhan Demir</h1>
+                <p>Mobile Developer</p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> batuhandemirdev@gmail.com</p>
+                    <p><strong>Telefon:</strong> +90 553 794 09 15</p>
+                    <p><strong>Adres:</strong> Çanakkale, Türkiye</p>
+                    <button id="ders-programi-butonu">Ders Programım</button>
+                    <button id="theme-toggle">Dark Mode</button>
+                    <button id="github-button">GitHub</button>
+                </div>
+            </div>
+            <div class="profile-pic">
+                <img src="profile.jpg" alt="Profil Resmi">
+            </div>
+        </header>
+        <main>
+            <section>
+                <h2>Eğitim</h2>
+                <div class="education">
+                    <h3>Bilgisayar Programcılığı, Turgut Özal Üniversitesi</h3>
+                    <p>2023 - 2025</p>
+                    <p>Derece: 3.5/4.0</p>
+                </div>
+            </section>
+            <section>
+                <h2>İş Deneyimi</h2>
+                <div class="experience">
+                    <h3>Web Geliştirici, XYZ Şirketi</h3>
+                    <p>2020 - Günümüz</p>
+                    <ul>
+                        <li>Şirket web sitesinin tasarımı ve geliştirilmesi</li>
+                        <li>Frontend ve Backend geliştirme</li>
+                        <li>Kullanıcı deneyimini artırmak için sürekli iyileştirme çalışmaları</li>
+                    </ul>
+                </div>
+                <div class="experience">
+                    <h3>Stajyer Web Geliştirici, LMN Şirketi</h3>
+                    <p>2019 - 2020</p>
+                    <ul>
+                        <li>Web projelerinde destek sağlama</li>
+                        <li>HTML, CSS ve JavaScript kullanarak küçük projeler geliştirme</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>Yetenekler</h2>
+                <ul class="skills">
+                    <li>HTML & CSS </li>
+                    <li>C++ , C#</li>
+                    <li>Flutter & Dart</li>
+                    <li>Python</li>
+                    <li>Git</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Sertifikalar</h2>
+                <ul class="certificates">
+                    <li>Front-End Web Geliştirme Sertifikası - ABC Kurumu</li>
+                    <li>JavaScript İleri Seviye Kursu - XYZ Akademi</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.getElementById('ders-programi-butonu').onclick = function() {
+            let dersProgrami = `
+                <html>
+                <head>
+                    <title>Ders Programı</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            background-color: #f4f4f4;
+                            display: flex;
+                            justify-content: center;
+                            padding: 20px;
+                        }
+                        .container {
+                            background-color: #ffffff;
+                            padding: 20px;
+                            border-radius: 10px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                            max-width: 800px;
+                            width: 100%;
+                        }
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            margin-top: 20px;
+                        }
+                        th, td {
+                            border: 1px solid #dddddd;
+                            text-align: left;
+                            padding: 8px;
+                        }
+                        th {
+                            background-color: #f2f2f2;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <h2>Ders Programı</h2>
+                        <table>
+                            <tr>
+                                <th>Saat</th>
+                                <th>Pazartesi</th>
+                                <th>Salı</th>
+                                <th>Çarşamba</th>
+                                <th>Perşembe</th>
+                                <th>Cuma</th>
+                            </tr>
+                            <tr>
+                                <td>08:00 - 09:15</td>
+                                <td>Turk Dili I</td>
+                                <td>Ataturk inkilapları</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                            </tr>
+                            <tr>
+                                <td>09:30 - 10:15</td>
+                                <td>Turk Dili I</td>
+                                <td>Ataturk inkilapları</td>
+                                <td>Bilgisayar Donanımları</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                            </tr>
+                            <tr>
+                                <td>10:30 - 11:15</td>
+                                <td>Yabancı Dil I</td>
+                                <td>Ofis Yazılımları</td>
+                                <td>Bilgisayar Donanımları</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                            </tr>
+                            <tr>
+                                <td>11:30 - 12:15</td>
+                                <td>Yabancı Dil I</td>
+                                <td>İşletim Sistemleri</td>
+                                <td>Bilgisayar Donanımları</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                            </tr>
+                            <tr>
+                                <td>13:30 - 14:15</td>
+                                <td>Ofis Yazılımları</td>
+                                <td>Boş</td>
+                                <td>Programlama Temelleri</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                            </tr>
+                            <tr>
+                                <td>14:30 - 15:15</td>
+                                <td>Ofis Yazılımları</td>
+                                <td>Matematik I</td>
+                                <td>Programlama Temelleri</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                            </tr>
+                            <tr>
+                                <td>15:30 - 16:15</td>
+                                <td>İşletim Sistemleri</td>
+                                <td>Matematik I</td>
+                                <td>Programlama Temelleri</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                            </tr>
+                            <tr>
+                                <td>16:30 - 17:15</td>
+                                <td>İşletim Sistemleri</td>
+                                <td>Matematik I</td>
+                                <td>Programlama Temelleri</td>
+                                <td>Boş</td>
+                                <td>Boş</td>
+                            </tr>
+                            <!-- Derslerin devamı buraya gelebilir -->
+                        </table>
+                    </div>
+                </body>
+                </html>
+            `;
+            let yeniSekme = window.open("", "_blank");
+            yeniSekme.document.write(dersProgrami);
+        };
+
+        document.getElementById('theme-toggle').onclick = function() {
+            const body = document.body;
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                document.getElementById('theme-toggle').innerText = 'Dark Mode';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-toggle').innerText = 'Light Mode';
+            }
+        };
+
+        // GitHub butonuna tıklanınca GitHub sayfasına yönlendirme
+        document.getElementById('github-button').onclick = function() {
+            window.open("https://github.com/yaabatuuu/", "_blank");
+        };
+    </script>
+</body>
+</html>
